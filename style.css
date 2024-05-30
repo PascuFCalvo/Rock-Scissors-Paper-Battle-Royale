@@ -2,11 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +14,7 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 
 a:hover {
@@ -104,13 +102,21 @@ button:focus-visible {
   }
 }
 
+@media (max-width: 900px) {
+  #tablero {
+    width: 90vw;
+    height: calc(90vw);
+    max-width: 900px;
+    max-height: 900px;
+  }
+}
 
 #tablero {
   width: 90vw;
+  height: 90vw;
   min-width: 400px;
-  max-width: 900px;
-  height: 90vh;
   min-height: 400px;
+  max-width: 900px;
   max-height: 900px;
   background-color: #424242;
 }
