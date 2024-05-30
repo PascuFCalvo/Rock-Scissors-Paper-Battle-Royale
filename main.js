@@ -120,10 +120,19 @@ function guerra(cuadro1, cuadro2) {
 
 // Función para manejar el evento de finalización del juego
 function winner(color) {
-  alert(`El ganador es el color ${color}`);
+  // Mostrar un mensaje de alerta con el texto del ganador
+  alert("Ganador: " + textLabels[color]);
   clearInterval(gameInterval); // Detener el intervalo del juego
   gameInterval = null; // Reiniciar el intervalo a null
-  started = false; // Reiniciar el estado del juego
+  started = false;// Reiniciar el estado del juego
+  let buttonStart = document.getElementById('start')
+  buttonStart.disabled = true;
+  let buttonReset = document.getElementById('reset')
+  buttonReset.disabled = true;
+  setTimeout(() => {
+    window.location.reload();
+  }, 1000);
+
 }
 
 // Función para mover los cuadros y aplicar colisiones
@@ -161,6 +170,7 @@ botonStart.addEventListener('click', () => {
 // Event listener para el botón Reset
 let botonReset = document.getElementById('reset');
 botonReset.addEventListener('click', () => {
+  window.location.reload();
   if (gameInterval !== null) {
     clearInterval(gameInterval); // Detener el intervalo del juego actual
     gameInterval = null; // Reiniciar el intervalo a null
